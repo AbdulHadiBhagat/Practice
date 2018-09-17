@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'detail_info.dart';
+import 'cards screen.dart';
 class MenuItem{
     MenuItem(this.title,this.child);
     String title;
@@ -33,7 +34,9 @@ class _TwoPanelsState extends State<TwoPanels> {
       child: DetailInfo() ,
     )
     ),
-    new MenuItem('Home', new Text('Home Screen ' ,style:  TextStyle(fontSize: 24.0,color: Colors.black)))
+    new MenuItem('Home', new Container(
+      child: CardsDemo(),
+    ))
   ];
   
   int selected = 1;

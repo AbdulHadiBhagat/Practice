@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'homepage.dart';
@@ -51,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
           return Scaffold(
             backgroundColor: Colors.white,
             body: Container(
-              child: this.times == '' ? HomePage():LoginScreen3()
+              child: this.times != '' ? LoginScreen3() : HomePage()
             ),
           );
         }
@@ -59,14 +61,16 @@ class _MyHomePageState extends State<MyHomePage> {
         void checkTimes() async{
           SharedPreferences prefs = await SharedPreferences.getInstance();
           int times = prefs.getInt('loadCount');
-          if(times == null || times == 0){
+          if(times == 1){
             setState(() {
-                          this.times = 'done';
+                          this.times = '';
                         });
           }else
           {
+           
             setState(() {
-                          this.times = '';
+                          this.times = 'done';
+                          
                         });
           }
 

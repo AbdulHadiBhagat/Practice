@@ -24,6 +24,7 @@ class _LoginScreen3State extends State<LoginScreen3>
 
         Future<void> verify() async {
     final PhoneCodeAutoRetrievalTimeout autoRetrieve = (String verId) {
+      print('hello');
       this.verificationId = verId;
     };
 
