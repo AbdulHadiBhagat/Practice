@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:medical_app/enter_details.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'homepage.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: <String,WidgetBuilder>{
         '/homepage' : (BuildContext context)=> HomePage(),
+        'info' : (BuildContext context)=> Details()
        
       },
     );
@@ -32,6 +34,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  
   List<Color> colors = [
     Colors.red,
     Colors.green,

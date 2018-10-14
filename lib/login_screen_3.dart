@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medical_app/enter_details.dart';
 
 
 class LoginScreen3 extends StatefulWidget {
@@ -94,7 +95,11 @@ class _LoginScreen3State extends State<LoginScreen3>
       smsCode: smsCode,
     )
         .then((user) {
-      Navigator.of(context).pushReplacementNamed('/homepage');
+          print(user.uid);
+       Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => Details()),
+  );
     }).catchError((ex) {
       print(ex);
     });
@@ -303,7 +308,7 @@ class _LoginScreen3State extends State<LoginScreen3>
         //           child: new Container(
         //             margin: EdgeInsets.all(8.0),
         //             decoration: BoxDecoration(border: Border.all(width: 0.25)),
-        //           ),
+        //           ),01OBJ6ePuUaNvMgKK5olaG5P6Z2
         //         ),
         //         Text(
         //           "OR CONNECT WITH",

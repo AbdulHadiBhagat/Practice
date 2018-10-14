@@ -31,11 +31,11 @@ class _TwoPanelsState extends State<TwoPanels> {
   List<MenuItem> items = [
     new MenuItem('Profile', 
     new Container(
-      child: DetailInfo() ,
+      child: new DetailInfo() ,
     )
     ),
     new MenuItem('Home', new Container(
-      child: CardsDemo(),
+      child: new CardsDemo(),
     ))
   ];
   
